@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantum Quest Finances | High-Yield Investment Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0a1a35;
+            --secondary: #00c6ff;
+            --accent: #7b00ff;
+            --light: #f0f8ff;
+            --dark: #051225;
+            --success: #00d68f;
+            --warning: #ffaa00;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, var(--primary), var(--dark));
+            color: var(--light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: rgba(5, 18, 37, 0.9);
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(123, 0, 255, 0.3);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo-icon {
+            color: var(--secondary);
+            font-size: 28px;
+        }
+        
+        .logo-text {
+            font-size: 24px;
+            font-weight: 700;
+            background: linear-gradient(90deg, var(--secondary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        nav a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        nav a:hover {
+            color: var(--secondary);
+        }
+        
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            transition: width 0.3s;
+        }
+        
+        nav a:hover::after {
+            width: 100%;
+        }
+        
+        .cta-button {
+            background: linear-gradient(90deg, var(--accent), var(--secondary));
+            color: white;
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 180px 0 100px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%230a1a35" fill-opacity="0.8" d="M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,261.3C672,256,768,224,864,218.7C960,213,1056,235,1152,229.3C1248,224,1344,192,1392,176L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') bottom no-repeat;
+            background-size: contain;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(123, 0, 255, 0.1) 0%, transparent 70%);
+            z-index: -1;
+        }
+        
+        .hero-content {
+            max-width: 650px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            background: linear-gradient(90deg, var(--light), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .hero-image {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 45%;
+            max-width: 500px;
+            z-index: 1;
+            opacity: 0.8;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        /* Value Proposition Section */
+        .value-prop {
+            padding: 100px 0;
+            background-color: rgba(5, 18, 37, 0.7);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            background: linear-gradient(90deg, var(--secondary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .section-title p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            opacity: 0.8;
+        }
+        
+        .prop-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .prop-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(123, 0, 255, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .prop-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            border-color: rgba(123, 0, 255, 0.5);
+        }
+        
+        .prop-icon {
+            font-size: 40px;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+        
+        .prop-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        
+        /* Investment Plans */
+        .investment-plans {
+            padding: 100px 0;
+        }
+        
+        .plans-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 50px;
+        }
+        
+        .plan-card {
+            background: linear-gradient(135deg, rgba(10, 26, 53, 0.8), rgba(5, 18, 37, 0.8));
+            border-radius: 15px;
+            padding: 40px 30px;
+            text-align: center;
+            border: 1px solid rgba(123, 0, 255, 0.3);
+            transition: transform 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .plan-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(123, 0, 255, 0.1) 0%, transparent 70%);
+            z-index: 1;
+        }
+        
+        .plan-card:hover {
+            transform: scale(1.05);
+            border-color: var(--accent);
+        }
+        
+        .plan-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .plan-amount {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--success);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .plan-payout {
+            font-size: 1.8rem;
+            color: var(--secondary);
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .plan-features {
+            list-style: none;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .plan-features li {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .plan-features li:last-child {
+            border-bottom: none;
+        }
+        
+        /* Interactive Content */
+        .interactive {
+            padding: 100px 0;
+            background-color: rgba(5, 18, 37, 0.7);
+        }
+        
+        .calculator {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 40px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(123, 0, 255, 0.3);
+        }
+        
+        .calculator h3 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 1.8rem;
+        }
+        
+        .calc-group {
+            margin-bottom: 20px;
+        }
+        
+        .calc-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .calc-group select,
+        .calc-group input {
+            width: 100%;
+            padding: 12px 15px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            font-size: 16px;
+        }
+        
+        .calc-result {
+            background: rgba(0, 214, 143, 0.1);
+            border: 1px solid var(--success);
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 30px;
+            text-align: center;
+        }
+        
+        .calc-result h4 {
+            margin-bottom: 10px;
+            color: var(--success);
+        }
+        
+        .calc-result p {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 100px 0;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 30px;
+            position: relative;
+            border: 1px solid rgba(123, 0, 255, 0.3);
+        }
+        
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 60px;
+            color: var(--secondary);
+            opacity: 0.2;
+            font-family: serif;
+        }
+        
+        .testimonial-content {
+            margin-bottom: 20px;
+            font-style: italic;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        
+        .author-info h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+        
+        .author-info p {
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 100px 0;
+            background-color: rgba(5, 18, 37, 0.7);
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+        
+        .contact-method {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(123, 0, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: var(--secondary);
+        }
+        
+        .contact-form {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(123, 0, 255, 0.3);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            font-size: 16px;
+        }
+        
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        
+        /* Payment Info */
+        .payment-info {
+            padding: 50px 0;
+            text-align: center;
+            background: rgba(5, 18, 37, 0.9);
+            border-top: 1px solid rgba(123, 0, 255, 0.3);
+        }
+        
+        .payment-address {
+            background: rgba(0, 198, 255, 0.1);
+            display: inline-block;
+            padding: 15px 30px;
+            border-radius: 8px;
+            margin-top: 20px;
+            font-family: monospace;
+            font-size: 1.1rem;
+            border: 1px solid var(--secondary);
+        }
+        
+        /* Footer */
+        footer {
+            padding: 50px 0 30px;
+            background: var(--dark);
+            border-top: 1px solid rgba(123, 0, 255, 0.3);
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: var(--light);
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+        
+        .footer-links a:hover {
+            opacity: 1;
+            color: var(--secondary);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--light);
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background: var(--secondary);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.7;
+        }
+        
+        /* Animations */
+        @keyframes float {
+            0% { transform: translateY(-50%) translateX(0); }
+            50% { transform: translateY(-53%) translateX(10px); }
+            100% { transform: translateY(-50%) translateX(0); }
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(0, 198, 255, 0.4); }
+            70% { box-shadow: 0 0 0 15px rgba(0, 198, 255, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(0, 198, 255, 0); }
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero {
+                padding: 150px 0 80px;
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .hero-image {
+                position: relative;
+                top: auto;
+                transform: none;
+                width: 80%;
+                max-width: 400px;
+                margin: 40px auto 0;
+                display: block;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            nav ul {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .hero {
+                text-align: center;
+            }
+            
+            .hero-content {
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-atom"></i>
+                </div>
+                <div class="logo-text">Quantum Quest Finance</div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#value">Value</a></li>
+                    <li><a href="#plans">Plans</a></li>
+                    <li><a href="#interactive">Calculator</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <a href="#plans" class="cta-button">Invest Now</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Quantum Leap Your Financial Future</h1>
+                <p>Experience the power of quantum-inspired investment strategies that deliver exceptional returns. Our cutting-edge platform combines advanced financial technology with proven investment principles to maximize your wealth potential.</p>
+                <a href="#plans" class="cta-button">Explore Investment Plans</a>
+            </div>
+            <div class="hero-image">
+                <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+                    <path fill="#00c6ff" opacity="0.3" d="M65,125c25-50,100-25,125-50s75-50,125-25s100,75,75,125s-50,100-75,125s-50,50-100,25s-100-50-125-100 S40,175,65,125z"/>
+                    <circle cx="250" cy="250" r="100" fill="none" stroke="#7b00ff" stroke-width="2" stroke-dasharray="10,5"/>
+                    <path fill="none" stroke="#00c6ff" stroke-width="3" d="M150,150 Q250,50 350,150 T250,350 T150,150" opacity="0.7"/>
+                    <circle cx="250" cy="250" r="30" fill="#7b00ff" opacity="0.7"/>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Proposition -->
+    <section id="value" class="value-prop">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Quantum Advantage</h2>
+                <p>Discover why investors choose Quantum Quest Finance for exceptional returns and financial growth</p>
+            </div>
+            <div class="prop-grid">
+                <div class="prop-card">
+                    <div class="prop-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>High-Yield Returns</h3>
+                    <p>Our proprietary quantum algorithms identify market opportunities that deliver returns significantly above market averages.</p>
+                </div>
+                <div class="prop-card">
+                    <div class="prop-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Secure Investments</h3>
+                    <p>Military-grade encryption and blockchain technology ensure your investments are protected at all times.</p>
+                </div>
+                <div class="prop-card">
+                    <div class="prop-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Lightning Fast Processing</h3>
+                    <p>Quantum computing capabilities allow for real-time market analysis and instant trade execution.</p>
+                </div>
+                <div class="prop-card">
+                    <div class="prop-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Expert Financial Team</h3>
+                    <p>Our team of quantum physicists and financial experts continuously optimize our investment strategies.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Investment Plans -->
+    <section id="plans" class="investment-plans">
+        <div class="container">
+            <div class="section-title">
+                <h2>Quantum Investment Plans</h2>
+                <p>Choose from our range of high-yield investment options tailored to various financial goals</p>
+            </div>
+            <div class="plans-container">
+                <!-- Plan 1 -->
+                <div class="plan-card">
+                    <h3>Quantum Starter</h3>
+                    <div class="plan-amount">$50</div>
+                    <div class="plan-payout">$100 Return</div>
+                    <ul class="plan-features">
+                        <li>100% Return on Investment</li>
+                        <li>7-Day Maturity Period</li>
+                        <li>24/7 Account Monitoring</li>
+                        <li>Basic Support</li>
+                    </ul>
+                    <a href="#" class="cta-button">Invest Now</a>
+                </div>
+                
+                <!-- Plan 2 -->
+                <div class="plan-card">
+                    <h3>Quantum Accelerator</h3>
+                    <div class="plan-amount">$150</div>
+                    <div class="plan-payout">$300 Return</div>
+                    <ul class="plan-features">
+                        <li>100% Return on Investment</li>
+                        <li>14-Day Maturity Period</li>
+                        <li>Priority Support</li>
+                        <li>Weekly Financial Reports</li>
+                    </ul>
+                    <a href="#" class="cta-button">Invest Now</a>
+                </div>
+                
+                <!-- Plan 3 -->
+                <div class="plan-card">
+                    <h3>Quantum Pro</h3>
+                    <div class="plan-amount">$500</div>
+                    <div class="plan-payout">$1,000 Return</div>
+                    <ul class="plan-features">
+                        <li>100% Return on Investment</li>
+                        <li>21-Day Maturity Period</li>
+                        <li>Dedicated Account Manager</li>
+                        <li>Daily Market Insights</li>
+                    </ul>
+                    <a href="#" class="cta-button">Invest Now</a>
+                </div>
+                
+                <!-- Plan 4 -->
+                <div class="plan-card">
+                    <h3>Quantum Elite</h3>
+                    <div class="plan-amount">$1,000</div>
+                    <div class="plan-payout">$2,000 Return</div>
+                    <ul class="plan-features">
+                        <li>100% Return on Investment</li>
+                        <li>30-Day Maturity Period</li>
+                        <li>24/7 Premium Support</li>
+                        <li>Personalized Strategy Sessions</li>
+                    </ul>
+                    <a href="#" class="cta-button">Invest Now</a>
+                </div>
+                
+                <!-- Plan 5 -->
+                <div class="plan-card">
+                    <h3>Quantum Master</h3>
+                    <div class="plan-amount">$2,000</div>
+                    <div class="plan-payout">$4,000 Return</div>
+                    <ul class="plan-features">
+                        <li>100% Return on Investment</li>
+                        <li>45-Day Maturity Period</li>
+                        <li>VIP Financial Consultation</li>
+                        <li>Exclusive Market Opportunities</li>
+                    </ul>
+                    <a href="#" class="cta-button">Invest Now</a>
+                </div>
+                
+                <!-- Plan 6 -->
+                <div class="plan-card">
+                    <h3>Quantum Visionary</h3>
+                    <div class="plan-amount">$4,000</div>
+                    <div class="plan-payout">$8,000 Return</div>
+                    <ul class="plan-features">
+                        <li>100% Return on Investment</li>
+                        <li>60-Day Maturity Period</li>
+                        <li>Executive Support Team</li>
+                        <li>Early Access to New Products</li>
+                    </ul>
+                    <a href="#" class="cta-button">Invest Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Calculator -->
+    <section id="interactive" class="interactive">
+        <div class="container">
+            <div class="section-title">
+                <h2>Quantum Returns Calculator</h2>
+                <p>Project your potential earnings with our advanced investment calculator</p>
+            </div>
+            <div class="calculator">
+                <h3>Calculate Your Returns</h3>
+                <div class="calc-group">
+                    <label for="plan-select">Select Investment Plan</label>
+                    <select id="plan-select">
+                        <option value="50">Quantum Starter ($50)</option>
+                        <option value="150">Quantum Accelerator ($150)</option>
+                        <option value="500">Quantum Pro ($500)</option>
+                        <option value="1000">Quantum Elite ($1000)</option>
+                        <option value="2000">Quantum Master ($2000)</option>
+                        <option value="4000">Quantum Visionary ($4000)</option>
+                    </select>
+                </div>
+                <div class="calc-group">
+                    <label for="investment-amount">Or Enter Custom Amount ($)</label>
+                    <input type="number" id="investment-amount" placeholder="Enter amount" min="50">
+                </div>
+                <div class="calc-result">
+                    <h4>Your Potential Return</h4>
+                    <p id="return-amount">$100.00</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Quantum Success Stories</h2>
+                <p>Hear from our investors who have experienced financial transformation</p>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        "Quantum Quest Finance has transformed my approach to investing. The returns are consistent and substantial. I started with the $500 plan and have since upgraded to the $4,000 plan. The support team is exceptional!"
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">MR</div>
+                        <div class="author-info">
+                            <h4>Michael Rodriguez</h4>
+                            <p>Investor since 2023</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        "As someone new to investing, I was hesitant at first. The Quantum Starter plan was the perfect entry point. The returns came exactly as promised. I've since reinvested in larger plans. This platform is revolutionary!"
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SJ</div>
+                        <div class="author-info">
+                            <h4>Sarah Johnson</h4>
+                            <p>Investor since 2024</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        "The quantum technology behind this platform is impressive. I've tried other investment platforms, but none compare to the returns and professionalism of Quantum Quest. My $2,000 investment became $4,000 in just 45 days!"
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">DP</div>
+                        <div class="author-info">
+                            <h4>David Peterson</h4>
+                            <p>Investor since 2023</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Connect With Us</h2>
+                <p>Have questions? Our quantum finance experts are ready to assist you</p>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h3>Email Us</h3>
+                            <p>Quantumquestfinance@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <div>
+                            <h3>Support Hours</h3>
+                            <p>24/7 Quantum Support Team</p>
+                        </div>
+                    </div>
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h3>Global Headquarters</h3>
+                            <p>Quantum Tower, Financial District, NY 10004</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="plan">Investment Plan Interest</label>
+                            <select id="plan">
+                                <option value="">Select a plan</option>
+                                <option value="starter">Quantum Starter</option>
+                                <option value="accelerator">Quantum Accelerator</option>
+                                <option value="pro">Quantum Pro</option>
+                                <option value="elite">Quantum Elite</option>
+                                <option value="master">Quantum Master</option>
+                                <option value="visionary">Quantum Visionary</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" required></textarea>
+                        </div>
+                        <button type="submit" class="cta-button">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment Information -->
+    <section class="payment-info">
+        <div class="container">
+            <h3>Send Investments To Our Secure Wallet</h3>
+            <div class="payment-address">
+                UQBv2_MiMmZ_OCDpgwDOHlRlUAMkgGIkq9BIdIV-CHcIhf59
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="logo">
+                        <div class="logo-icon">
+                            <i class="fas fa-atom"></i>
+                        </div>
+                        <div class="logo-text">Quantum Quest Finance</div>
+                    </div>
+                    <p>Transforming finance through quantum-inspired investment strategies. Secure, high-yield investment opportunities for everyone.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Investment Plans</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Quantum Starter</a></li>
+                        <li><a href="#">Quantum Accelerator</a></li>
+                        <li><a href="#">Quantum Pro</a></li>
+                        <li><a href="#">Quantum Elite</a></li>
+                        <li><a href="#">Quantum Master</a></li>
+                        <li><a href="#">Quantum Visionary</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#value">Our Value</a></li>
+                        <li><a href="#plans">Investment Plans</a></li>
+                        <li><a href="#interactive">Calculator</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Investment Agreement</a></li>
+                        <li><a href="#">Risk Disclosure</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Quantum Quest Finance. All rights reserved. Quantum financial solutions for a new era of wealth creation.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Investment Calculator Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const planSelect = document.getElementById('plan-select');
+            const investmentInput = document.getElementById('investment-amount');
+            const returnAmount = document.getElementById('return-amount');
+            
+            function calculateReturn() {
+                let investment = investmentInput.value;
+                
+                // If custom amount is empty, use selected plan value
+                if (!investment) {
+                    investment = planSelect.value;
+                }
+                
+                // Ensure investment is a number and at least $50
+                investment = Math.max(50, Number(investment));
+                
+                // Calculate 100% return
+                const returns = investment * 2;
+                
+                // Update the display
+                returnAmount.textContent = '$' + returns.toFixed(2);
+                
+                // Update the input field to show the validated amount
+                investmentInput.value = investment;
+            }
+            
+            // Event listeners
+            planSelect.addEventListener('change', function() {
+                investmentInput.value = '';
+                calculateReturn();
+            });
+            
+            investmentInput.addEventListener('input', calculateReturn);
+            
+            // Initialize calculator
+            calculateReturn();
+            
+            // Form submission
+            const contactForm = document.querySelector('.contact-form form');
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for your message! Our quantum finance team will contact you shortly.');
+                contactForm.reset();
+            });
+        });
+    </script>
+</body>
+</html>
